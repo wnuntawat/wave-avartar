@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0e17">
+  <title>WAVE RACE — ทริปน้ำไม่อาบ</title>
+  <meta name="description" content="เกมแต่ง Honda Wave ซิ่งทางตรง ¼ ไมล์ (0.402 กม.) มีระบบแต่งรถ Craft ลูกสูบ ก้านสูบ สเปก 95/9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="logo">WAVE<span>RACE</span><small>ทริปน้ำไม่อาบ</small></div>
+    <div class="wallet">
+      <span class="money">฿ <b id="money">0</b></span>
+      <span class="mats" title="วัตถุดิบ Craft">🥄 <b id="m-alu">0</b> 🔩 <b id="m-steel">0</b> 💎 <b id="m-ti">0</b></span>
+      <span class="rec" id="rec"></span>
+    </div>
+    <div class="actions">
+      <button id="btn-sound" title="เสียง">🔊</button>
+      <button id="btn-race" class="primary">🏁 ลงสนาม</button>
+    </div>
+  </header>
+
+  <main id="garage">
+    <section class="left">
+      <div class="stage">
+        <canvas id="preview"></canvas>
+        <div id="preview-tag"></div>
+        <canvas id="cutaway" title="ภาพตัดเครื่อง ลูกสูบ/ก้านสูบ"></canvas>
+        <div class="tools">
+          <button id="btn-rider" title="แสดง/ซ่อนคนขี่">👤 คนขี่</button>
+          <button id="btn-rev" title="กดค้างเพื่อเร่งเครื่อง">🔊 เร่งเครื่อง</button>
+        </div>
+      </div>
+      <div id="stats" class="stats"></div>
+      <canvas id="dyno"></canvas>
+    </section>
+    <section class="right">
+      <nav id="tabs"></nav>
+      <div id="panel"></div>
+    </section>
+  </main>
+
+  <section id="race" hidden>
+    <canvas id="race-canvas"></canvas>
+    <button id="btn-quit" title="ออกจากการแข่ง (Esc)">✕ ออก</button>
+    <div id="controls">
+      <button id="btn-gas" class="gas">GAS<small>ค้าง</small></button>
+      <div class="side">
+        <button id="btn-shift">▲ เกียร์</button>
+        <button id="btn-nos">⚡ NOS</button>
+      </div>
+    </div>
+    <div id="race-help">Space = เร่ง (ค้าง) • ↑ / Shift = เปลี่ยนเกียร์ • N = NOS • Esc = ออก</div>
+  </section>
+
+  <div id="modal" hidden></div>
+  <div id="toast"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="sim.js"></script>
+<script src="bike.js"></script>
+<script src="race.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
